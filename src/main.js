@@ -133,3 +133,16 @@ document.addEventListener("DOMContentLoaded", function() {
     emoteUrlInput.dispatchEvent(new Event('input'));
   }
 });
+
+document
+  .getElementById("emoteFileInput")
+  .addEventListener("change", function (event) {
+    const file = event.target.files[0];
+    if (!file) return;
+
+    const url = URL.createObjectURL(file);
+
+    document
+      .querySelectorAll(".customEmote")
+      .forEach((img) => (img.src = url));
+  });
