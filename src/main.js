@@ -1,3 +1,56 @@
+const state = {
+  badgeUrl: "",
+  emoteUrls: [],
+};
+
+const badgeInput = document.getElementById("badgeInput");
+const emoteInput = document.getElementById("emoteInput");
+
+badgeInput?.addEventListener("change", (event) => {
+  const file = event.target.files?.[0];
+  if (!file) return;
+
+  state.badgeUrl = URL.createObjectURL(file);
+  renderBadge();
+});
+
+emoteInput?.addEventListener("change", (event) => {
+  const files = Array.from(event.target.files || []);
+  if (!files.length) return;
+
+  state.emoteUrls = files.map((file) => URL.createObjectURL(file));
+  renderEmotes();
+});
+
+function renderBadge() {
+  const badges = document.querySelectorAll(".customBadge");
+
+  badges.forEach((badge) => {
+    if (state.badgeUrl) {
+      badge.src = state.badgeUrl;
+      badge.style.display = "inline-block";
+    } else {
+      badge.removeAttribute("src");
+      badge.style.display = "none";
+    }
+  });
+}
+
+function renderEmotes() {
+  const slots = document.querySelectorAll(".emote-slot");
+
+  slots.forEach((slot) => {
+    const index = Number(slot.dataset.emote);
+
+    if (!Number.isInteger(index) || !state.emoteUrls[index]) {
+      slot.innerHTML = "";
+      return;
+    }
+
+    slot.innerHTML = `<img class="emoticon" src="${state.emoteUrls[index]}" alt="emote ${index}" />`;
+  });
+}
+
 /**
  * Triggered when the emote url input is modified.
  * @param  {Event} event The associated event.
