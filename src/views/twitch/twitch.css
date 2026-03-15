@@ -1,0 +1,73 @@
+.chat-messages {
+  display: block;
+  font-size: 13.33333px;
+  line-height: 17.33333px;
+  text-align: left;
+  width: 100%;
+}
+
+.twitch-chat {
+  background-color: #efeef1;
+  color: #433f4a;
+}
+
+.twitch-chat.dark {
+  background-color: rgb(30, 30, 30);
+  color: #d3d3d3;
+}
+
+.chat-lines {
+  padding: 10px 0;
+}
+
+.chat-line {
+  line-height: 20px;
+  margin: -3px 0;
+  padding: 6px 20px;
+}
+
+.timestamp {
+  color: #706a7c;
+  margin-right: 2px;
+}
+
+.dark .timestamp {
+  color: #7b7b7b;
+}
+
+.badges {
+  display: inline-block;
+}
+
+.badge {
+  border-radius: 2px;
+  display: inline-block;
+  height: 18px;
+  margin: 0 5px 1px 0;
+  object-fit: contain;
+  vertical-align: middle;
+  width: 18px;
+}
+
+.from {
+  cursor: default;
+  font-weight: 700;
+}
+
+.colon {
+  margin-left: -2px;
+  margin-right: 2px;
+}
+
+.emoticon {
+  display: inline-block;
+  height: 28px;
+  object-fit: contain;
+  vertical-align: middle;
+  width: 28px;
+}
+
+.emote-slot {
+  display: inline-block;
+  vertical-align: middle;
+}

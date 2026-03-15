@@ -1,0 +1,71 @@
+.discord-messages {
+  border-radius: 14px;
+  padding: 16px;
+}
+
+.discord-light {
+  background: #ffffff;
+  color: #2e3338;
+}
+
+.discord-dark {
+  background: #313338;
+  color: #dbdee1;
+}
+
+.discord-line {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.discord-line:last-child {
+  margin-bottom: 0;
+}
+
+.discord-avatar {
+  align-items: center;
+  background: #5865f2;
+  border-radius: 50%;
+  color: #fff;
+  display: flex;
+  flex: 0 0 40px;
+  font-size: 16px;
+  font-weight: 700;
+  height: 40px;
+  justify-content: center;
+  width: 40px;
+}
+
+.discord-body {
+  min-width: 0;
+}
+
+.discord-meta {
+  align-items: baseline;
+  display: flex;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.discord-name {
+  color: #c96bff;
+  font-weight: 700;
+}
+
+.discord-name-alt {
+  color: #f23f43;
+}
+
+.discord-name-blue {
+  color: #00a8fc;
+}
+
+.discord-time {
+  color: #949ba4;
+  font-size: 12px;
+}
+
+.discord-message {
+  line-height: 1.5;
+}

@@ -1,168 +1,87 @@
-/**
- * Misc
- */
+@import "./components/settings/settings.css";
+@import "./views/twitch/twitch.css";
+@import "./views/discord/discord.css";
 
 body {
-  background-color: #323232;
+  background: #18181b;
+  color: #efeff1;
   font-family: Helvetica Neue, Helvetica, sans-serif;
-}
-
-.controls {
-  font-size: 20px;
-  margin: 20px 0;
-  text-align: center;
-}
-
-.textInput {
-  border: 0;
-  box-sizing: border-box;
-  display: inline-block;
-  margin: 10px;
-  padding: 10px;
-  width: 400px;
-}
-
-.button {
-  background-color: #282828;
-  border: 1px solid #0e0e0e;
-  box-sizing: border-box;
-  color: #aaaaaa;
-  cursor: pointer;
-  display: inline-block;
-  margin: 10px;
-  padding: 10px;
-}
-
-.button:focus, .textInput:focus {
-  border: 1px solid #0e0e0e;
-  outline: none;
-}
-
-.log {
-  color: #47d7b3;
-  height: 40px;
-  margin-top: -10px;
-}
-
-.footer {
-  color: #D3D3D3;
-  font-size: 12px;
-}
-
-.footer a {
-  color: #D3D3D3;
-  text-decoration: underline;
-}
-
-.footer a:hover {
-  text-decoration: none;
-}
-
-/**
- * Chat
- */
-
-.chats {
-  margin: 0 auto;
-  text-align: center;
-  width: 900px;
-}
-
-.chat-messages {
-  background-color: #efeef1;
-  color: #433f4a;
-  display: inline-block;
-  font-size: 13.33333px;
-  line-height: 17.33333px;
-  margin: 0 10px;
-  text-align: left;
-  width: 400px;
-}
-
-.chat-lines {
-  padding: 10px 0;
-}
-
-.chat-line {
-  line-height: 20px;
-  margin-top: inherit;
-  margin: -3px 0;
-  padding-left: 10px;
-  padding-right: 10px;
-  padding: 6px 20px;
-}
-
-.timestamp {
-  color: #706a7c;
-  margin-right: 2px;
-}
-
-.badges {
-  display: inline-block;
-}
-
-.badge {
-  border-radius: 2px;
-  cursor: pointer;
-  display: inline-block;
-  height: 18px;
   margin: 0;
-  margin-bottom: 1px;
-  min-width: 18px;
-  vertical-align: middle;
 }
 
-.badge:last-child {
-  margin-right: 5px;
+.app {
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  min-height: 100vh;
 }
 
-.from {
-  cursor: pointer;
-  font-weight: 700;
+.sidebar {
+  background: #111214;
+  border-right: 1px solid #2a2a2d;
+  padding: 24px;
 }
 
-.colon {
-  margin-left: -2px;
-  margin-right: 2px;
+.app-title {
+  font-size: 28px;
+  margin: 0 0 24px;
 }
 
-.emoticon {
-  display: inline-block;
-  max-height: 28px;
-  max-width: 28px;
+.panel {
+  background: #1d1f23;
+  border: 1px solid #2d2f34;
+  border-radius: 14px;
+  margin-bottom: 20px;
+  padding: 18px;
 }
 
-/**
- * Dark Mode
- */
-
-.dark {
-  background-color: rgb(30,30,30);
-  color: #D3D3D3;
+.panel-title {
+  font-size: 18px;
+  margin: 0 0 14px;
 }
 
-.dark .timestamp {
-  color: #7B7B7B;
+.content {
+  padding: 24px;
+  overflow: auto;
 }
 
-/**
- * Badges
- */
+.preview-section {
+  margin-bottom: 32px;
+}
 
- .subscriber {
-   background-image: url(https://static-cdn.jtvnw.net/jtv_user_pictures/subscriber-star.png);
-   background-repeat: no-repeat;
-   background-size: 18px 18px;
- }
+.section-header h2 {
+  font-size: 22px;
+  margin: 0 0 16px;
+}
 
- .twitch-bits-1 {
-   background: url(https://static-cdn.jtvnw.net/badges/v1/73b5c3fb-24f9-4a82-a852-2f475b59411c/1);
- }
+.preview-grid {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(2, minmax(320px, 1fr));
+}
 
- .twitch-bits-1000 {
-   background: url(https://static-cdn.jtvnw.net/badges/v1/0d85a29e-79ad-4c63-a285-3acd2c66f2ba/1);
- }
+.preview-label {
+  color: #b9bbc0;
+  font-size: 14px;
+  font-weight: 600;
+  margin: 0 0 10px;
+  text-transform: uppercase;
+}
 
- .twitch-premium-1 {
-   background: url(https://static-cdn.jtvnw.net/badges/v1/a1dd5073-19c3-4911-8cb4-c464a7bc1510/1);
- }
+.hidden {
+  display: none !important;
+}
+
+@media (max-width: 1100px) {
+  .app {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    border-right: 0;
+    border-bottom: 1px solid #2a2a2d;
+  }
+
+  .preview-grid {
+    grid-template-columns: 1fr;
+  }
+}
