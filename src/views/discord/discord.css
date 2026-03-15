@@ -1,16 +1,21 @@
 .discord-messages {
   border-radius: 14px;
-  padding: 16px;
+  padding: 25px;
+  overflow: hidden;
 }
 
 .discord-light {
   background: #ffffff;
   color: #2e3338;
+  min-height: 400px;
+  align-content: center;
 }
 
 .discord-dark {
   background: #313338;
   color: #dbdee1;
+  min-height: 400px;
+  align-content: center;
 }
 
 .discord-line {
@@ -39,6 +44,7 @@
 
 .discord-body {
   min-width: 0;
+  overflow: visible;
 }
 
 .discord-meta {
@@ -59,5 +65,23 @@
 }
 
 .discord-message {
-  line-height: 1.5;
+  line-height: 1;
+}
+
+.discord-message-emote-only {
+  display: flex;
+  align-items: center;
+  min-height: 40px;
+}
+
+.discord-message .emoticon {
+  width: 22px;
+  height: 22px;
+  margin-top: 1px;
+}
+
+.discord-message-emote-only .emoticon {
+  width: 40px;
+  height: 40px;
+  margin-top: -5px;
 }

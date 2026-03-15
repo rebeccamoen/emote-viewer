@@ -12,6 +12,7 @@ export const usernames = [
   "nutella",
   "neo",
   "Alex",
+  "rex",
   "buneary",
   "bonnie",
   "koda",

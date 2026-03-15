@@ -28,6 +28,11 @@ export function renderSettingsPanel() {
         <span>Show badges</span>
         <input type="checkbox" id="toggleBadges" checked />
       </label>
+
+      <div class="setting">
+        <span>Live chat </span>
+        <input type="checkbox" id="toggleLiveChat" unchecked/>
+      </div>
     </div>
   `;
 }

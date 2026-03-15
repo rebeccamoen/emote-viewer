@@ -23,11 +23,19 @@ function formatDiscordTimestamp(date = new Date()) {
   });
 }
 
-function buildDiscordMessage(messageIndex) {
+export function buildDiscordMessage() {
   const timestamp = formatDiscordTimestamp();
   const username = getRandomUsername();
   const color = getDiscordColorForUsername(username);
   const content = getExampleChatContent();
+
+  const messageClass =
+    content.type === "emote-only"
+      ? "discord-message discord-message-emote-only"
+      : "discord-message";
+
+  const messageHtml =
+    content.type === "text-only" ? escapeHtml(content.html) : content.html;
 
   return `
     <div class="discord-line">
@@ -37,9 +45,9 @@ function buildDiscordMessage(messageIndex) {
           <span class="discord-name" style="color: ${color};">${escapeHtml(username)}</span>
           <span class="discord-time">${timestamp}</span>
         </div>
-      <span class="message">
-  ${content.type === "text-only" ? escapeHtml(content.html) : content.html}
-</span>
+        <div class="${messageClass}">
+          ${messageHtml}
+        </div>
       </div>
     </div>
   `;

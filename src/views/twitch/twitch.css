@@ -4,6 +4,7 @@
   line-height: 17.33333px;
   text-align: left;
   width: 100%;
+  overflow: hidden;
 }
 
 .twitch-chat {
@@ -18,12 +19,15 @@
 
 .chat-lines {
   padding: 10px 0;
+  overflow: hidden;
 }
 
 .chat-line {
   line-height: 20px;
   margin: -3px 0;
   padding: 6px 20px;
+  transition: transform 0.25s ease;
+  overflow: visible;
 }
 
 .timestamp {
@@ -60,15 +64,23 @@
   margin-right: 2px;
 }
 
-.emoticon {
-  display: inline-block;
-  height: 28px;
-  object-fit: contain;
-  vertical-align: middle;
-  width: 28px;
-}
-
 .emote-slot {
   display: inline-block;
+  width: 28px;
+  height: 0;
+  position: relative;
   vertical-align: middle;
+  overflow: visible;
+  font-size: 0;
+  line-height: 0;
+}
+
+.emoticon {
+  position: absolute;
+  left: 0;
+  top: -14px;
+  width: 28px;
+  height: 28px;
+  display: block;
+  object-fit: contain;
 }

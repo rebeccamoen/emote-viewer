@@ -19,7 +19,7 @@ function formatTwitchTimestamp(date = new Date()) {
   });
 }
 
-function buildTwitchLine(index) {
+export function buildTwitchLine(index) {
   const timestamp = formatTwitchTimestamp();
   const username = getRandomUsername();
   const color = getTwitchColorForUsername(username);
@@ -41,7 +41,7 @@ function buildTwitchLine(index) {
 }
 
 function buildTwitchColumn(isDark, label, startIndex) {
-  const lines = Array.from({ length: 14 }, (_, index) => {
+  const lines = Array.from({ length: 15 }, (_, index) => {
     return buildTwitchLine(startIndex + index);
   }).join("");
 
