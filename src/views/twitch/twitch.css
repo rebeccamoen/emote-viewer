@@ -50,6 +50,7 @@
 }
 
 .from {
+  color: var(--username-color);
   cursor: default;
   font-weight: 700;
 }

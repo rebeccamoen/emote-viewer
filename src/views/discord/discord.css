@@ -49,16 +49,8 @@
 }
 
 .discord-name {
-  color: #c96bff;
+  color: var(--username-color);
   font-weight: 700;
-}
-
-.discord-name-alt {
-  color: #f23f43;
-}
-
-.discord-name-blue {
-  color: #00a8fc;
 }
 
 .discord-time {
